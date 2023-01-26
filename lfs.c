@@ -3535,7 +3535,7 @@ static int lfs_file_rawtruncate(lfs_t *lfs, lfs_file_t *file, lfs_off_t size) {
         // lookup new head in ctz skip list
         err = lfs_ctz_find(lfs, NULL, &file->cache,
                 file->ctz.head, file->ctz.size,
-                size, &file->block, &file->off);
+                size > 0 ? size-1 : 0, &file->block, &file->off);
         if (err) {
             return err;
         }
