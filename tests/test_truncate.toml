@@ -446,7 +446,6 @@ code = '''
             LFS_O_RDWR | LFS_O_CREAT) => 0;
 
     uint8_t bad_byte = 2;
-    uint8_t *wb = buffer;
     uint8_t *rb = buffer + cfg.block_size;
 
     /* Write a series of 1s to the first block */
